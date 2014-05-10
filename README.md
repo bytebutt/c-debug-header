@@ -8,11 +8,11 @@ or equal to C89 is provided with slightly different syntax.
 
 There are five different macros included in the header:
 
-    * `debug()` is used for general purpose debugging statements
-    * `debug_w()` is used for warning messages
-    * `debug_e()` is used for error messages
-    * `debug_wtf()` is used for things that should never ever happen
-    * `assert()` is used to check the truth of some boolean expression
+* `debug()` is used for general purpose debugging statements
+* `debug_w()` is used for warning messages
+* `debug_e()` is used for error messages
+* `debug_wtf()` is used for things that should never ever happen
+* `assert()` is used to check the truth of some boolean expression
 
 ### C89 or Later
 
