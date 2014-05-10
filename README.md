@@ -64,5 +64,5 @@ the aid of additional software.
 ## (Un)license
 
 This header file is released under
-[The Unlicense](https://github.com/msrichar/c_debug/raw/master/UNLICENSE),
+[The Unlicense](https://raw.githubusercontent.com/msrichar/c-debug-header/master/UNLICENSE),
 a fancy way of saying this code is hereby released into the Public Domain.
