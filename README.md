@@ -61,6 +61,16 @@ compilation command along with one of the above options. Windows users should
 note that this option will not work correctly in the command prompt without
 the aid of additional software.
 
+## Example Output
+
+### Normal
+
+![Normal Output](https://raw.githubusercontent.com/msrichar/c-debug-header/gh-pages/img/example-output.png "Normal Output")
+
+### Colorized
+
+![Colorized Output](https://raw.githubusercontent.com/msrichar/c-debug-header/gh-pages/img/example-output-color.png "Colorized Output")
+
 ## (Un)license
 
 This header file is released under
