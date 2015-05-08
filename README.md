@@ -8,15 +8,15 @@ or equal to C89 is provided with slightly different syntax.
 
 There are five different macros included in the header:
 
-* `debug()`: Used for general purpose debugging statements.
-* `debug_w()`: Used for warning messages.
-* `debug_e()`: Used for error messages
-* `debug_wtf()`: What a Terrible Failure! Used for things that should never ever happen.
-* `assert()`: Used to check the truth of some boolean expression.
+* `debug()` is used for general purpose debugging statements.
+* `debug_w()` is used for warning messages.
+* `debug_e()` is used for error messages.
+* `debug_wtf()` is used for things that should never ever happen. (What a Terrible Failure!)
+* `assert()` is used to check the truth of some boolean expression.
 
 All of the debug statements support printf-style format strings (excluding `assert()`).
-Additionally, a newline is automatically written after each macro call, so you
-don't need to add `\n` to the end of your messages.
+Additionally, a newline is automatically written after each message, so you
+don't need to add `\n` to the end of your debug statements.
 
 ### C89 / ANSI C
 
@@ -37,7 +37,7 @@ uses a single set of parentheses.
 debug(("A debug message!"));
 debug_w(("Parameter x has a negative value: %d", x));
 
-/* Single set of parenthesis. */
+/* Single set of parentheses. */
 assert(x != 3);
 ```
 
@@ -55,11 +55,11 @@ gcc -DDEBUG demo.c -o demo
 All of the macros use only a single set of parenthesis using this option.
 
 ```c
-/* Single set of parenthesis. */
+/* Single set of parentheses. */
 debug("A debug message!");
 debug_w("Parameter x has negative value: %d", x);
 
-/* Single set of parenthesis. */
+/* Single set of parentheses. */
 assert(x != 3);
 ```
 
