@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "debug.h"
+#include "debug89.h"
 
 void add_numbers(const int, const int);
 void subtract_numbers(const int, const int);

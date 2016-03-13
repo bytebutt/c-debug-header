@@ -27,20 +27,20 @@
 
 #ifdef DEBUG
 
-#  define debug(...)      do { debug_prefix("",          DEBUG_COLOR_BLUE);   printf(__VA_ARGS__); printf("\n"); } while(0)
-#  define debug_w(...)    do { debug_prefix("WARNING: ", DEBUG_COLOR_YELLOW); printf(__VA_ARGS__); printf("\n"); } while(0)
-#  define debug_e(...)    do { debug_prefix("ERROR: ",   DEBUG_COLOR_RED);    printf(__VA_ARGS__); printf("\n"); } while(0)
-#  define debug_wtf(...)  do { debug_prefix("WTF: ",     DEBUG_COLOR_GREEN);  printf(__VA_ARGS__); printf("\n"); } while(0)
+#  define debug(msg)      do { debug_prefix("",          DEBUG_COLOR_BLUE);   printf msg; printf("\n"); } while(0)
+#  define debug_w(msg)    do { debug_prefix("WARNING: ", DEBUG_COLOR_YELLOW); printf msg; printf("\n"); } while(0)
+#  define debug_e(msg)    do { debug_prefix("ERROR: ",   DEBUG_COLOR_RED);    printf msg; printf("\n"); } while(0)
+#  define debug_wtf(msg)  do { debug_prefix("WTF: ",     DEBUG_COLOR_GREEN);  printf msg; printf("\n"); } while(0)
 
 #  define assert(expr)    do { if (!(expr)) { debug_prefix("ASSERTION FAILED: ", DEBUG_COLOR_PURPLE); printf(#expr); printf("\n"); } } while(0)
 
 #else
 
-#  define debug(...)      ((void) 0)
-#  define debug_w(...)    ((void) 0)
-#  define debug_e(...)    ((void) 0)
-#  define debug_wtf(...)  ((void) 0)
-#  define assert(...)     ((void) 0)
+#  define debug(args)      ((void) 0)
+#  define debug_w(args)    ((void) 0)
+#  define debug_e(args)    ((void) 0)
+#  define debug_wtf(args)  ((void) 0)
+#  define assert(expr)     ((void) 0)
 
 #endif /* DEBUG */
 #endif /* DEBUG_H_INCLUDED */

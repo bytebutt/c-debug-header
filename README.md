@@ -1,12 +1,14 @@
 ## About
 
-The [`debug.h`](debug.h) header file can be included into a C source file to enable
-several different debugging macros. Support for all versions of C greater than
-or equal to C89 is provided with slightly different syntax.
+The repo contains header files that can be included into a C source file
+to enable several different debugging macros. There is a header file for both
+C89 [`debug89.h`](debug89.h) and C99+ [`debug.h`](debug.h). Both of these
+header files include the same macros, but require slightly different usage.
 
-## Usage
 
-There are five different macros included in the header:
+## Macros
+
+There are five different macros defined in the header:
 
 * `debug()` is used for general purpose debugging statements.
 * `debug_w()` is used for warning messages.
@@ -18,15 +20,16 @@ All of the debug statements support printf-style format strings (excluding `asse
 Additionally, a newline is automatically written after each message, so you
 don't need to add `\n` to the end of your debug statements.
 
-### C89 / ANSI C
-
-Add the `-DDEBUG89` flag to your compilation command to enable the
-C89-compatible debug statements.
+By default, these macros produce no output. Output must be explicitly enabled by
+including the `-DDEBUG` flag during compilation.
 
 ```
-gcc -ansi -DDEBUG89 demo89.c -o demo89
+gcc -DDEBUG foobar.c -o foobar
 ```
 
+### Usage: C89 / ANSI C
+
+Include the [`debug89.h`](debug89.h) header in your code.
 Due to the lack of `__VA_ARGS__` in C89, the macro calls must be
 wrapped in two sets of parentheses to cope with a variable number of
 parameters. The exception to this rule is the `assert()` macro, which only
@@ -43,16 +46,10 @@ assert(x != 3);
 
 See [`demo89.c`](demo89.c) for example usage.
 
-### C99 or Later
+### Usage: C99 or Later
 
-Add the `-DDEBUG` flag to your compilation command to enable the regular
-debug statements.
-
-```
-gcc -DDEBUG demo.c -o demo
-```
-
-All of the macros use only a single set of parenthesis using this option.
+Include the [`debug.h`](debug.h) header in your code.
+Use all of the macros with a single set of parentheses.
 
 ```c
 /* Single set of parentheses. */
@@ -69,13 +66,8 @@ See [`demo.c`](demo.c) for example usage.
 
 ANSI color escape sequences can be enabled to make the output of the debugging
 statements more visible. Simply add the `-DDEBUG_COLOR` flag to your
-compilation command along with either `-DDEBUG` or `-DDEBUG89`. This option will only
-work correctly if your terminal supports ANSI escape sequences (i.e. not `cmd.exe`
-on Windows).
-
-```
-gcc -DDEBUG -DDEBUG_COLOR program.c -o program
-```
+compilation command along with `-DDEBUG`. This option will only work correctly
+if your terminal supports ANSI escape sequences (i.e. not `cmd.exe` on Windows).
 
 ## Example Output
 
